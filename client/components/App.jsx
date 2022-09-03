@@ -11,27 +11,23 @@ function App() {
   const [array, setArray] = useState(baseArray)
 
   function resetButtonHandler() {
-    console.log('resetButtonClicked')
+    // console.log('resetButtonClicked')
     setArray(Array.from({
       length: 1000
     }, i => <Pixel key={i}/> ))
   }
 
-  // const array = Array.from({
-  //   length: 1000
-  // }, i => <Pixel key={i}/> )
-
   return (
     <>
-      <div className="title">
-      </div>
+      {/* <div className="title">
+      </div> */}
       {/* This 'main' div is only for styling (so we can use flexbox) */}
       <Home resetButtonClick={resetButtonHandler}/>
       <div className='canvas'>
         <Canvas pixelArray={array}/>
       </div>
-      <div className="main">
-      </div>
+      {/* <div className="main">
+      </div> */}
     </>
   )
 

@@ -132,7 +132,7 @@ function App() {
       setArray = _useState2[1];
 
   function resetButtonHandler() {
-    console.log('resetButtonClicked');
+    // console.log('resetButtonClicked')
     setArray(Array.from({
       length: 1000
     }, function (i) {
@@ -140,22 +140,15 @@ function App() {
         key: i
       });
     }));
-  } // const array = Array.from({
-  //   length: 1000
-  // }, i => <Pixel key={i}/> )
+  }
 
-
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "title"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Home__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Home__WEBPACK_IMPORTED_MODULE_1__["default"], {
     resetButtonClick: resetButtonHandler
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "canvas"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Canvas__WEBPACK_IMPORTED_MODULE_2__["default"], {
     pixelArray: array
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "main"
-  }));
+  })));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
@@ -173,14 +166,9 @@ function App() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Pixel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Pixel */ "./client/components/Pixel.jsx");
-
 
 
 function Canvas(props) {
-  // const array = Array.from({
-  //     length: 1000
-  //   }, i => <Pixel key={i}/> )
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, props.pixelArray);
 }
 
@@ -199,7 +187,6 @@ function Canvas(props) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Pixel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Pixel */ "./client/components/Pixel.jsx");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -214,34 +201,32 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
 function Home(props) {
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(''),
       _useState2 = _slicedToArray(_useState, 2),
       prompt = _useState2[0],
-      setPrompt = _useState2[1]; // const [style, setStyle] = useState({width: '20px', backgroundColor: 'white'})
+      setPrompt = _useState2[1];
 
-
-  var animal = ['Elephant', 'Squirrel', 'Bear', 'Panda', 'Whale', 'Giraffe'];
-  var verb = ['eating', 'swimming', 'playing', 'dancing', 'prancing'];
-  var object = ['Rainbow', 'Apple', 'Guitar', 'Pencilcase', 'Headphones'];
+  var subject = ['Elephant', 'Squirrel', 'Bear', 'Whale', 'Dolly Parton', 'Juggalo', 'Mark Zuckerberg', 'Shark', 'Keanu Reeves', 'Kanye West'];
+  var verb = ['eating', 'swimming', 'playing', 'dancing', 'prancing', 'kicking', 'fighting', 'rapping', 'laughing', 'coding'];
+  var object = ['teapot', 'computer', 'guitar', 'book', 'yacht', 'friends', 'tear gas', 'kittens', 'no shoes', 'snakes'];
 
   var randomNumber = function randomNumber(min, max) {
     return Math.floor(Math.random() * (max - min) + min);
   };
 
-  var rollDice = function rollDice() {
-    var number1 = randomNumber(0, 5);
-    var number2 = randomNumber(0, 5);
-    var number3 = randomNumber(0, 5);
-    setPrompt("".concat(animal[number1], " ").concat(verb[number2], " with ").concat(object[number3]));
+  var promptMe = function promptMe() {
+    var number1 = randomNumber(0, 10);
+    var number2 = randomNumber(0, 10);
+    var number3 = randomNumber(0, 10);
+    setPrompt("".concat(subject[number1], " ").concat(verb[number2], " with ").concat(object[number3]));
   };
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "title"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "SHIBBLES"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "A product bought to you by The Zuckerberg Sister Wives"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, prompt), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     onClick: function onClick() {
-      return rollDice(animal, verb, object);
+      return promptMe(subject, verb, object);
     }
   }, "Prompt me"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     onClick: props.resetButtonClick
@@ -286,20 +271,35 @@ function Pixel() {
       style = _useState2[0],
       setStyle = _useState2[1];
 
-  var mouseDrag = function mouseDrag(event) {
+  var mouseDrag = function mouseDrag() {
     setStyle({
       width: '20px',
       backgroundColor: 'black'
     });
-  }; // const resetCanvas = (event) => {useState({width: '20px', backgroundColor: 'white'})}
+  };
 
+  var onDoubleClick = function onDoubleClick() {
+    setStyle({
+      width: '20px',
+      backgroundColor: 'white'
+    });
+  };
+
+  var onContextMenu = function onContextMenu() {
+    setStyle({
+      width: '20px',
+      backgroundColor: 'pink'
+    });
+  };
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     style: style,
     onDragEnter: function onDragEnter() {
       return mouseDrag();
     },
-    draggable: true
+    draggable: true,
+    onDoubleClick: onDoubleClick,
+    onContextMenu: onContextMenu
   });
 }
 

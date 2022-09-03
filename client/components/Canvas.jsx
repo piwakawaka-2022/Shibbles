@@ -1,16 +1,12 @@
-import React, {useState, useEffect} from 'react'
-import Pixel from './Pixel'
+import React from 'react'
+
 
 
 function Canvas (props) {
 
-      // const array = Array.from({
-      //     length: 1000
-      //   }, i => <Pixel key={i}/> )
   return (
     <>
     {props.pixelArray}
-    {/* <button>Test</button> */}
     </>
   )
         

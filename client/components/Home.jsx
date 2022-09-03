@@ -1,23 +1,21 @@
-import React, {useState, useEffect} from 'react'
-import Pixel from './Pixel'
+import React, {useState} from 'react'
 
 function Home(props) {
     const [prompt, setPrompt] = useState('')
-    // const [style, setStyle] = useState({width: '20px', backgroundColor: 'white'})
 
-    const animal = ['Elephant', 'Squirrel', 'Bear', 'Panda', 'Whale', 'Giraffe']
-    const verb = ['eating', 'swimming', 'playing', 'dancing', 'prancing']
-    const object = ['Rainbow', 'Apple', 'Guitar', 'Pencilcase', 'Headphones']
+    const subject = ['Elephant', 'Squirrel', 'Bear', 'Whale', 'Dolly Parton', 'Juggalo', 'Mark Zuckerberg', 'Shark', 'Keanu Reeves', 'Kanye West']
+    const verb = ['eating', 'swimming', 'playing', 'dancing', 'prancing', 'kicking', 'fighting', 'rapping', 'laughing', 'coding']
+    const object = ['teapot', 'computer', 'guitar', 'book', 'yacht', 'friends', 'tear gas', 'kittens', 'no shoes', 'snakes']
 
     const randomNumber = (min, max) => {
         return Math.floor(Math.random() * (max - min) + min)
     }
 
-    const rollDice = () => {
-        let number1 = randomNumber(0, 5) 
-        let number2 = randomNumber(0, 5) 
-        let number3 = randomNumber(0, 5) 
-        setPrompt(`${animal[number1]} ${verb[number2]} with ${object[number3]}`)
+    const promptMe = () => {
+        let number1 = randomNumber(0, 10) 
+        let number2 = randomNumber(0, 10) 
+        let number3 = randomNumber(0, 10) 
+        setPrompt(`${subject[number1]} ${verb[number2]} with ${object[number3]}`)
     }
 
   return (
@@ -25,7 +23,7 @@ function Home(props) {
       <h1>SHIBBLES</h1>
       <h3>A product bought to you by The Zuckerberg Sister Wives</h3>
       <p>{prompt}</p>
-      <button onClick={() => rollDice(animal, verb, object)}>Prompt me</button>
+      <button onClick={() => promptMe(subject, verb, object)}>Prompt me</button>
       <button onClick={props.resetButtonClick}>Reset canvas</button>
       <p></p>
     </div>
